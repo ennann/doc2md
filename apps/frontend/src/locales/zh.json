@@ -1,6 +1,10 @@
 {
   "title": "将文档转换为 Markdown",
   "subtitle": "快速、私密、安全 — 所有转换都在临时内存中进行",
+  "seo": {
+    "title": "Doc2MD - 在线免费将 DOCX、DOC、PDF、PPTX 转换为 Markdown",
+    "description": "免费在线文档转 Markdown 工具。快速将 Word（DOCX、DOC）、PDF、PowerPoint（PPTX）转换为 Markdown。隐私优先，不存储文件，浏览器本地处理。快速安全。"
+  },
   "upload": {
     "dragDrop": "拖拽文档到这里",
     "orClick": "或点击上传",

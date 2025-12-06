@@ -1,6 +1,10 @@
 {
   "title": "Convertir des documents en Markdown",
   "subtitle": "Rapide, privé, sécurisé — toutes les conversions se font en mémoire temporaire",
+  "seo": {
+    "title": "Doc2MD - Convertir DOCX, DOC, PDF, PPTX en Markdown en ligne gratuitement",
+    "description": "Convertisseur gratuit de documents en Markdown en ligne. Convertissez Word (DOCX, DOC), PDF, PowerPoint (PPTX) en Markdown instantanément. Priorité à la confidentialité, aucun stockage de fichiers, fonctionne dans votre navigateur. Rapide et sécurisé."
+  },
   "upload": {
     "dragDrop": "Glissez-déposez votre document ici",
     "orClick": "ou cliquez pour télécharger",
