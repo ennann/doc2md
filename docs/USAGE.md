@@ -39,7 +39,7 @@ Complete guide for setting up, running, and deploying Doc2MD.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/doc2md.git
+git clone https://github.com/ennann/doc2md.git
 cd doc2md
 ```
 
@@ -171,7 +171,7 @@ The application will:
 
 ```bash
 ssh user@yourserver.com
-git clone https://github.com/yourusername/doc2md.git
+git clone https://github.com/ennann/doc2md.git
 cd doc2md
 ```
 

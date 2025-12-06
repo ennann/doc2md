@@ -115,7 +115,7 @@ export default async function Home({ params }: PageProps) {
               <span>{t.footer.openSource}</span>
               <span className="hidden md:inline">•</span>
               <a
-                href="https://github.com/yourusername/doc2md"
+                href="https://github.com/ennann/doc2md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:underline"
