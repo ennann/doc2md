@@ -3,11 +3,31 @@
 # Doc2MD Backend Deployment Script
 # This script is triggered by CI/CD to deploy the backend services
 #
+# Usage:
+#   ./scripts/deploy.sh           # Development mode
+#   ./scripts/deploy.sh prod      # Production mode
+#
 # Note: Frontend is deployed separately on Vercel
 
 set -e
 
-echo "🚀 Starting Doc2MD backend deployment..."
+# Check if running in production mode
+ENV_MODE="${1:-dev}"
+ENV_FILE=""
+
+if [ "$ENV_MODE" = "prod" ] || [ "$ENV_MODE" = "production" ]; then
+    echo "🚀 Starting Doc2MD backend deployment (PRODUCTION MODE)..."
+    ENV_FILE="--env-file docker/.env.prod"
+
+    # Check if production config exists
+    if [ ! -f "docker/.env.prod" ]; then
+        echo "❌ Error: docker/.env.prod not found!"
+        echo "Please create it from docker/.env.production template"
+        exit 1
+    fi
+else
+    echo "🚀 Starting Doc2MD backend deployment (DEVELOPMENT MODE)..."
+fi
 
 # Navigate to project directory
 cd "$(dirname "$0")/.." || exit 1
@@ -26,7 +46,7 @@ docker image prune -f
 
 # Build and start backend services only
 echo "🏗️  Building and starting backend services (API + Worker + Redis)..."
-docker compose up -d --build
+docker compose $ENV_FILE up -d --build
 
 # Wait for services to be healthy
 echo "⏳ Waiting for services to be ready..."
