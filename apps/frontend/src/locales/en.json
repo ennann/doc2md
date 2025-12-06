@@ -1,0 +1,23 @@
+{
+  "title": "Convert documents to Markdown",
+  "subtitle": "Fast, private, secure — all conversions happen in transient memory.",
+  "upload": {
+    "dragDrop": "Drag & drop your document here",
+    "orClick": "or click to upload",
+    "convert": "Convert to Markdown",
+    "supported": "Supported: DOCX, PDF, PPTX (max 10MB)",
+    "processing": "Converting...",
+    "success": "✓ Converted successfully. Your Markdown file is now downloaded.",
+    "error": "Conversion failed"
+  },
+  "privacy": {
+    "title": "Privacy First",
+    "noStorage": "No file storage",
+    "noTracking": "No tracking",
+    "secure": "100% private"
+  },
+  "footer": {
+    "openSource": "Open Source",
+    "github": "View on GitHub"
+  }
+}

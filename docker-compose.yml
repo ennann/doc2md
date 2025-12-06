@@ -1,0 +1,59 @@
+# ========================================
+# Doc2MD - 开发环境 Docker Compose 配置
+# ========================================
+# 用于本地开发和测试
+# 生产环境部署请参考：docker/DEPLOYMENT.md
+
+services:
+  # Redis - 任务队列存储
+  redis:
+    image: redis:7-alpine
+    container_name: doc2md-redis
+    ports:
+      - "6380:6379"  # 宿主机:6380 -> 容器:6379
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Backend API - FastAPI 应用
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: doc2md-backend
+    ports:
+      - "8100:8000"  # 宿主机:8100 -> 容器:8000
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - TASK_TTL=300
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,https://doc2md.vercel.app,https://doc2md.me,https://www.doc2md.me
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Worker - 文档转换处理器
+  worker:
+    build:
+      context: ./apps/worker
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      replicas: 2  # 开发环境运行 2 个 worker 实例
+
+volumes:
+  redis-data:

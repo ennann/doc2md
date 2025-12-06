@@ -1,0 +1,10 @@
+redis==5.0.1
+rq==1.15.1
+markitdown>=0.0.1a4
+python-dotenv==1.0.0
+olefile>=0.46
+python-pptx
+python-docx
+openpyxl
+mammoth
+pdfplumber
