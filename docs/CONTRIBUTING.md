@@ -478,7 +478,7 @@ Any other information
 
 - **Documentation**: Check [docs](./USAGE.md)
 - **Discussions**: GitHub Discussions
-- **Email**: support@doc2md.me
+- **Email**: support@doc2md.org
 - **Discord**: [Join our server](#)
 
 ## License

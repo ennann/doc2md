@@ -43,7 +43,7 @@ docker-compose --version
 将你的域名 A 记录指向服务器 IP：
 
 ```
-A    api.doc2md.me    -> 你的服务器IP
+A    api.doc2md.org    -> 你的服务器IP
 ```
 
 ## 🚀 部署步骤
@@ -81,10 +81,10 @@ nano docker/.env.prod
 REDIS_PASSWORD=your_strong_redis_password_here
 
 # 允许的前端域名
-ALLOWED_ORIGINS=https://doc2md.me
+ALLOWED_ORIGINS=https://doc2md.org
 
 # 你的域名
-DOMAIN=api.doc2md.me
+DOMAIN=api.doc2md.org
 
 # SSL 证书邮箱
 SSL_EMAIL=your-email@example.com
@@ -132,7 +132,7 @@ sudo cp docker/nginx/default.conf /etc/nginx/sites-available/doc2md
 
 # 修改域名
 sudo nano /etc/nginx/sites-available/doc2md
-# 将 api.doc2md.me 改为你的实际域名
+# 将 api.doc2md.org 改为你的实际域名
 
 # 启用站点
 sudo ln -s /etc/nginx/sites-available/doc2md /etc/nginx/sites-enabled/
@@ -151,7 +151,7 @@ sudo systemctl reload nginx
 sudo apt install certbot python3-certbot-nginx -y
 
 # 自动获取证书并配置 Nginx
-sudo certbot --nginx -d api.doc2md.me
+sudo certbot --nginx -d api.doc2md.org
 
 # 测试自动续期
 sudo certbot renew --dry-run
@@ -163,13 +163,13 @@ Certbot 会自动修改你的 Nginx 配置，添加 SSL 配置并设置 HTTP 到
 
 ```bash
 # 测试健康检查
-curl http://api.doc2md.me/health
+curl http://api.doc2md.org/health
 
 # 测试 HTTPS（如果已配置 SSL）
-curl https://api.doc2md.me/health
+curl https://api.doc2md.org/health
 
 # 查看 API 文档
-# 浏览器访问：https://api.doc2md.me/docs
+# 浏览器访问：https://api.doc2md.org/docs
 ```
 
 ## 🔧 使用 Docker Compose 内置 Nginx（可选方案）
@@ -441,7 +441,7 @@ docker-compose restart worker
 ## 📞 获取帮助
 
 - **文档**：查看 `docs/` 目录
-- **API 文档**：访问 `https://api.doc2md.me/docs`
+- **API 文档**：访问 `https://api.doc2md.org/docs`
 - **GitHub Issues**：提交问题到项目仓库
 
 ## 🔄 回滚部署

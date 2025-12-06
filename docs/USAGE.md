@@ -187,7 +187,7 @@ REDIS_PORT=6379
 REDIS_DB=0
 TASK_TTL=300
 DEPLOY_TOKEN=your-strong-secret-token-here
-ALLOWED_ORIGINS=https://doc2md.me,https://www.doc2md.me
+ALLOWED_ORIGINS=https://doc2md.org,https://www.doc2md.org
 ```
 
 3. **Run deployment**:
@@ -201,7 +201,7 @@ ALLOWED_ORIGINS=https://doc2md.me,https://www.doc2md.me
 ```nginx
 server {
     listen 80;
-    server_name api.doc2md.me;
+    server_name api.doc2md.org;
 
     location / {
         proxy_pass http://localhost:8100;
@@ -214,7 +214,7 @@ server {
 5. **Setup SSL** with Let's Encrypt:
 
 ```bash
-sudo certbot --nginx -d api.doc2md.me
+sudo certbot --nginx -d api.doc2md.org
 ```
 
 ### Frontend Deployment (Vercel)
@@ -244,7 +244,7 @@ vercel --prod
    - **Output Directory**: `.next`
 
 3. Add environment variable:
-   - `NEXT_PUBLIC_API_URL`: `https://api.doc2md.me`
+   - `NEXT_PUBLIC_API_URL`: `https://api.doc2md.org`
 
 4. Deploy
 
@@ -254,7 +254,7 @@ vercel --prod
 
 1. **Add secrets to GitHub repository**:
    - `DEPLOY_TOKEN`: Your deploy token
-   - `DEPLOY_URL`: Your backend API URL (e.g., `https://api.doc2md.me`)
+   - `DEPLOY_URL`: Your backend API URL (e.g., `https://api.doc2md.org`)
 
 2. **Push to main branch** to trigger automatic deployment:
 
@@ -281,7 +281,7 @@ TASK_TTL=300                        # Task TTL in seconds (5 minutes)
 
 # Security
 DEPLOY_TOKEN=your-secret-token      # Token for deployment endpoint
-ALLOWED_ORIGINS=http://localhost:3000,https://doc2md.me  # CORS origins
+ALLOWED_ORIGINS=http://localhost:3000,https://doc2md.org  # CORS origins
 
 # Optional
 MAX_FILE_SIZE=10485760              # Max file size in bytes (10MB)
@@ -293,7 +293,7 @@ File: `apps/frontend/.env.local`
 
 ```env
 # Backend API URL
-NEXT_PUBLIC_API_URL=http://localhost:8100  # Use https://api.doc2md.me in production
+NEXT_PUBLIC_API_URL=http://localhost:8100  # Use https://api.doc2md.org in production
 ```
 
 ### Worker Configuration
@@ -504,7 +504,7 @@ pnpm dev
 
 ```nginx
 server {
-    server_name api.doc2md.me;
+    server_name api.doc2md.org;
 
     location / {
         proxy_pass http://localhost:8100;
@@ -654,7 +654,7 @@ allowed_extensions = [".docx", ".pdf", ".pptx", ".doc", ".xlsx", ".html", ".new_
 - **Documentation**: Check [Architecture](./ARCHITECTURE.md) and [API Reference](./API.md)
 - **Issues**: Open an issue on GitHub
 - **Discussions**: Join GitHub Discussions
-- **Email**: support@doc2md.me
+- **Email**: support@doc2md.org
 
 ## Next Steps
 

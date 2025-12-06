@@ -33,7 +33,7 @@ services:
       - REDIS_PORT=6379
       - REDIS_DB=0
       - TASK_TTL=300
-      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,https://doc2md.vercel.app,https://doc2md.me,https://www.doc2md.me
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,https://doc2md.vercel.app,https://doc2md.org,https://www.doc2md.org
     depends_on:
       redis:
         condition: service_healthy

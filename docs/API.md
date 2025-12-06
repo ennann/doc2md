@@ -5,7 +5,7 @@ Complete API documentation for Doc2MD backend.
 ## Base URL
 
 - **Development**: `http://localhost:8100`
-- **Production**: `https://api.doc2md.me`
+- **Production**: `https://api.doc2md.org`
 
 ## Authentication
 
@@ -554,4 +554,4 @@ hey -n 100 -c 10 http://localhost:8100/health
 For issues or questions:
 - Check [Usage Guide](./USAGE.md)
 - Open GitHub issue
-- Email: support@doc2md.me
+- Email: support@doc2md.org
