@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import type { Locale } from '@/types';
 import { getTranslation } from '@/lib/i18n';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -120,7 +121,10 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
   return (
     <html lang={locale as Locale} className={inter.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }
