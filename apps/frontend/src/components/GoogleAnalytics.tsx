@@ -1,8 +1,6 @@
 'use client';
 
 import Script from 'next/script';
-import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -19,33 +17,12 @@ declare global {
 }
 
 export default function GoogleAnalytics() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
   // Only load GA in production with valid ID
-  const shouldLoadGA = 
-    typeof window !== 'undefined' &&
-    process.env.NODE_ENV === 'production' && 
-    GA_MEASUREMENT_ID && 
-    GA_MEASUREMENT_ID.startsWith('G-');
-
-  // Track page views on route change
-  useEffect(() => {
-    if (!shouldLoadGA || typeof window === 'undefined' || !window.gtag) return;
-
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
-    
-    window.gtag('config', GA_MEASUREMENT_ID!, {
-      page_path: url,
-    });
-  }, [pathname, searchParams, shouldLoadGA]);
-
-  // Don't render anything on server side
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
-  if (!shouldLoadGA) {
+  if (
+    process.env.NODE_ENV !== 'production' ||
+    !GA_MEASUREMENT_ID ||
+    !GA_MEASUREMENT_ID.startsWith('G-')
+  ) {
     return null;
   }
 
@@ -76,6 +53,21 @@ export default function GoogleAnalytics() {
               page_path: window.location.pathname,
               send_page_view: true
             });
+            
+            // Track client-side navigation (SPA)
+            (function() {
+              let lastPath = window.location.pathname;
+              const observer = new MutationObserver(function() {
+                const currentPath = window.location.pathname;
+                if (currentPath !== lastPath) {
+                  lastPath = currentPath;
+                  gtag('config', '${GA_MEASUREMENT_ID}', {
+                    page_path: currentPath
+                  });
+                }
+              });
+              observer.observe(document, { subtree: true, childList: true });
+            })();
           `,
         }}
       />
