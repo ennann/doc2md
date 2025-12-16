@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Trigger Deployment Webhook
         env:
-          DEPLOY_URL: "https://deploy.doc2md.org/"
+          DEPLOY_URL: "https://deploy.doc2md.org/?fast=true"
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
           # Robust Deployment Script with Exponential Backoff
