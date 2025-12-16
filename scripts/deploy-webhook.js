@@ -12,8 +12,30 @@ const http = require('http');
 const { spawn } = require('child_process');
 const path = require('path');
 
+const fs = require('fs');
+
 const PORT = 8020;
-const SECRET = process.env.DEPLOY_SECRET || 'changeme_in_prod'; // Simple protection
+
+// Try to load secret from process.env, then fallback to reading apps/backend/.env
+let SECRET = process.env.DEPLOY_SECRET;
+
+if (!SECRET) {
+  try {
+    const envPath = path.join(__dirname, '..', 'apps', 'backend', '.env');
+    if (fs.existsSync(envPath)) {
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      const match = envContent.match(/^DEPLOY_TOKEN=(.*)$/m);
+      if (match) {
+        SECRET = match[1].trim();
+        console.log(`Loaded DEPLOY_TOKEN from ${envPath}`);
+      }
+    }
+  } catch (error) {
+    console.error('Failed to load .env file:', error);
+  }
+}
+
+SECRET = SECRET || 'changeme_in_prod'; // Final fallback
 
 const server = http.createServer((req, res) => {
   // CORS for convenience (optional)
