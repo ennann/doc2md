@@ -1,27 +1,28 @@
 {
-  "title": "Convertir des documents en Markdown",
-  "subtitle": "Rapide, privé, sécurisé — toutes les conversions se font en mémoire temporaire",
-  "seo": {
-    "title": "Doc2MD - Convertir DOCX, DOC, PDF, PPTX en Markdown en ligne gratuitement",
-    "description": "Convertisseur gratuit de documents en Markdown en ligne. Convertissez Word (DOCX, DOC), PDF, PowerPoint (PPTX) en Markdown instantanément. Priorité à la confidentialité, aucun stockage de fichiers, fonctionne dans votre navigateur. Rapide et sécurisé."
-  },
-  "upload": {
-    "dragDrop": "Glissez-déposez votre document ici",
-    "orClick": "ou cliquez pour télécharger",
-    "convert": "Convertir en Markdown",
-    "supported": "Formats : DOCX, PDF, PPTX (max 10 Mo)",
-    "processing": "Conversion en cours...",
-    "success": "✓ Conversion réussie. Votre fichier Markdown est téléchargé.",
-    "error": "Échec de la conversion"
-  },
-  "privacy": {
-    "title": "Confidentialité d'abord",
-    "noStorage": "Aucun stockage",
-    "noTracking": "Aucun suivi",
-    "secure": "100% privé"
-  },
-  "footer": {
-    "openSource": "Open Source",
-    "github": "Voir sur GitHub"
-  }
+    "title": "Convertir des documents en Markdown",
+    "subtitle": "Rapide, privé, sécurisé — toutes les conversions se font en mémoire temporaire",
+    "seo": {
+        "title": "Doc2MD - Convertir DOCX, DOC, PDF, PPTX en Markdown en ligne gratuitement",
+        "description": "Convertisseur gratuit de documents en Markdown en ligne. Convertissez Word (DOCX, DOC), PDF, PowerPoint (PPTX) en Markdown instantanément. Priorité à la confidentialité, aucun stockage de fichiers, fonctionne dans votre navigateur. Rapide et sécurisé."
+    },
+    "upload": {
+        "dragDrop": "Glissez-déposez votre document ici",
+        "orClick": "ou cliquez pour télécharger",
+        "convert": "Convertir en Markdown",
+        "supported": "Formats : DOCX, PDF, PPTX (max 10 Mo)",
+        "processing": "Conversion en cours...",
+        "success": "✓ Conversion réussie. Votre fichier Markdown est téléchargé.",
+        "error": "Échec de la conversion"
+    },
+    "privacy": {
+        "title": "Confidentialité d'abord",
+        "noStorage": "Aucun stockage",
+        "noTracking": "Aucun suivi",
+        "secure": "100% privé"
+    },
+    "footer": {
+        "github": "GitHub",
+        "copyright": "© {year} Doc2MD Team",
+        "followUs": "Suivez-nous"
+    }
 }

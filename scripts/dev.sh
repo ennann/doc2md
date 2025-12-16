@@ -67,8 +67,8 @@ if [ "$FRONTEND_ONLY" = false ]; then
     echo "✅ Backend services are running!"
     echo ""
     echo "📊 Service URLs:"
-    echo "  - Backend API: http://localhost:8100"
-    echo "  - API Docs: http://localhost:8100/docs"
+    echo "  - Backend API: http://localhost:8200"
+    echo "  - API Docs: http://localhost:8200/docs"
     echo "  - Redis: localhost:6380"
     echo ""
 fi

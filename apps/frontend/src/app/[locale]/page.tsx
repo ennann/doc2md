@@ -72,7 +72,7 @@ export default async function Home({ params }: PageProps) {
         <main className="flex-1 flex flex-col items-center justify-center px-4 py-16">
           <div className="w-full max-w-2xl mx-auto space-y-16">
             <section className="text-center space-y-4 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight [text-wrap:balance]">
                 {t.title}
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto">
@@ -111,17 +111,29 @@ export default async function Home({ params }: PageProps) {
 
         <footer className="border-t py-8">
           <div className="container mx-auto px-4 max-w-4xl">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-sm text-muted-foreground">
-              <span>{t.footer.openSource}</span>
-              <span className="hidden md:inline">•</span>
-              <a
-                href="https://github.com/ennann/doc2md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:underline"
-              >
-                {t.footer.github}
-              </a>
+            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+              <div>
+                {(t.footer.copyright || '© {year} Doc2MD').replace('{year}', new Date().getFullYear().toString())}
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://x.com/qingnianxiaozhe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {t.footer.followUs}
+                </a>
+                <span className="hidden md:inline opacity-40">|</span>
+                <a
+                  href="https://github.com/ennann/doc2md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {t.footer.github}
+                </a>
+              </div>
             </div>
           </div>
         </footer>

@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef } from 'react';
 import { uploadFile, getTaskStatus, downloadMarkdown } from '@/lib/api';
 import type { TaskResponse } from '@/types';
-import { Upload, CheckCircle2, AlertCircle, FileText } from 'lucide-react';
+import { Upload, CheckCircle2, AlertCircle, FileText, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -132,7 +132,7 @@ export default function FileUploader({ t }: FileUploaderProps) {
     <div className="space-y-6">
       <div
         className={cn(
-          'upload-area',
+          'upload-area relative',
           isDragging && 'dragging',
           (status === 'processing' || status === 'uploading') && 'processing'
         )}
@@ -157,7 +157,13 @@ export default function FileUploader({ t }: FileUploaderProps) {
           className="hidden"
         />
 
-        <p className="supported-formats">{t.upload.supported}</p>
+        <div className="flex flex-col items-center gap-2">
+          <p className="supported-formats">{t.upload.supported}</p>
+          <div className="flex items-center gap-1.5 text-green-600 dark:text-green-500 bg-green-50 dark:bg-green-900/10 px-3 py-1 rounded-full text-xs font-medium">
+            <ShieldCheck className="h-3.5 w-3.5" />
+            {t.privacy.secure}
+          </div>
+        </div>
       </div>
 
       {file && status === 'idle' && (

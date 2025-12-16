@@ -61,8 +61,8 @@ if docker compose ps | grep -q "Up"; then
     docker compose ps
     echo ""
     echo "📊 Service URLs:"
-    echo "  - Backend API: http://localhost:8100"
-    echo "  - API Docs: http://localhost:8100/docs"
+    echo "  - Backend API: http://localhost:8200"
+    echo "  - API Docs: http://localhost:8200/docs"
     echo "  - Redis: localhost:6380"
 else
     echo "❌ Deployment failed! Some services are not running."

@@ -1,27 +1,28 @@
 {
-  "title": "ドキュメントをMarkdownに変換",
-  "subtitle": "高速、プライベート、安全 — すべての変換は一時メモリで行われます",
-  "seo": {
-    "title": "Doc2MD - DOCX、DOC、PDF、PPTXを無料でMarkdownに変換",
-    "description": "無料のオンライン文書からMarkdownへのコンバーター。Word（DOCX、DOC）、PDF、PowerPoint（PPTX）を即座にMarkdownに変換。プライバシー重視、ファイル保存なし、ブラウザで動作。高速かつ安全。"
-  },
-  "upload": {
-    "dragDrop": "ドキュメントをここにドラッグ&ドロップ",
-    "orClick": "またはクリックしてアップロード",
-    "convert": "Markdownに変換",
-    "supported": "対応: DOCX、PDF、PPTX（最大10MB）",
-    "processing": "変換中...",
-    "success": "✓ 変換完了。Markdownファイルがダウンロードされました。",
-    "error": "変換失敗"
-  },
-  "privacy": {
-    "title": "プライバシー優先",
-    "noStorage": "ファイル保存なし",
-    "noTracking": "追跡なし",
-    "secure": "完全プライベート"
-  },
-  "footer": {
-    "openSource": "オープンソース",
-    "github": "GitHubで見る"
-  }
+    "title": "ドキュメントをMarkdownに変換",
+    "subtitle": "高速、プライベート、安全 — すべての変換は一時メモリで行われます",
+    "seo": {
+        "title": "Doc2MD - DOCX、DOC、PDF、PPTXを無料でMarkdownに変換",
+        "description": "無料のオンライン文書からMarkdownへのコンバーター。Word（DOCX、DOC）、PDF、PowerPoint（PPTX）を即座にMarkdownに変換。プライバシー重視、ファイル保存なし、ブラウザで動作。高速かつ安全。"
+    },
+    "upload": {
+        "dragDrop": "ドキュメントをここにドラッグ&ドロップ",
+        "orClick": "またはクリックしてアップロード",
+        "convert": "Markdownに変換",
+        "supported": "対応: DOCX、PDF、PPTX（最大10MB）",
+        "processing": "変換中...",
+        "success": "✓ 変換完了。Markdownファイルがダウンロードされました。",
+        "error": "変換失敗"
+    },
+    "privacy": {
+        "title": "プライバシー優先",
+        "noStorage": "ファイル保存なし",
+        "noTracking": "追跡なし",
+        "secure": "完全プライベート"
+    },
+    "footer": {
+        "github": "GitHub",
+        "copyright": "© {year} Doc2MD Team",
+        "followUs": "フォローする"
+    }
 }

@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile
     container_name: doc2md-backend
     ports:
-      - "8100:8000"  # 宿主机:8100 -> 容器:8000
+      - "8200:8000"  # 宿主机:8200 -> 容器:8000
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379

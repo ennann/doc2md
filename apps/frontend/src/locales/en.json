@@ -1,27 +1,28 @@
 {
-  "title": "Convert documents to Markdown",
-  "subtitle": "Fast, private, secure — all conversions happen in transient memory.",
-  "seo": {
-    "title": "Doc2MD - Convert DOCX, DOC, PDF, PPTX to Markdown Online Free",
-    "description": "Free online document to markdown converter. Convert Word (DOCX, DOC), PDF, PowerPoint (PPTX) to Markdown instantly. Privacy-first, no file storage, works in your browser. Fast & secure."
-  },
-  "upload": {
-    "dragDrop": "Drag & drop your document here",
-    "orClick": "or click to upload",
-    "convert": "Convert to Markdown",
-    "supported": "Supported: DOCX, PDF, PPTX (max 10MB)",
-    "processing": "Converting...",
-    "success": "✓ Converted successfully. Your Markdown file is now downloaded.",
-    "error": "Conversion failed"
-  },
-  "privacy": {
-    "title": "Privacy First",
-    "noStorage": "No file storage",
-    "noTracking": "No tracking",
-    "secure": "100% private"
-  },
-  "footer": {
-    "openSource": "Open Source",
-    "github": "View on GitHub"
-  }
+    "title": "Document to Markdown Made Simple",
+    "subtitle": "Enterprise-grade Security · Auto-Deletion · Zero Learning Curve",
+    "seo": {
+        "title": "Doc2MD - Secure, Free Online Document to Markdown Converter",
+        "description": "Simple document conversion tool. Convert Word, PDF, PPT to Markdown instantly. Files are physically destroyed immediately after processing. No login required."
+    },
+    "upload": {
+        "dragDrop": "Drag & drop document here",
+        "orClick": "or click to browse",
+        "convert": "Start Conversion",
+        "supported": "Supports: Word, PDF, PPT (Max 10MB)",
+        "processing": "Securely processing...",
+        "success": "✓ Complete! Your file has been safely downloaded.",
+        "error": "Conversion failed, please try again"
+    },
+    "privacy": {
+        "title": "Security Promise",
+        "noStorage": "Auto-Deletion",
+        "noTracking": "No Traces",
+        "secure": "Enterprise Security"
+    },
+    "footer": {
+        "github": "GitHub",
+        "copyright": "© {year} Doc2MD Team",
+        "followUs": "Follow Us"
+    }
 }

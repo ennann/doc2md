@@ -8,10 +8,10 @@ import { useState } from 'react';
 
 const locales: { code: Locale; label: string }[] = [
   { code: 'en', label: 'EN' },
+  { code: 'de', label: 'DE' },
+  { code: 'fr', label: 'FR' },
   { code: 'zh', label: '中文' },
   { code: 'ja', label: '日本語' },
-  { code: 'fr', label: 'FR' },
-  { code: 'de', label: 'DE' },
 ];
 
 interface LocaleSwitcherProps {

@@ -1,27 +1,28 @@
 {
-  "title": "Dokumente zu Markdown konvertieren",
-  "subtitle": "Schnell, privat, sicher — alle Konvertierungen erfolgen im temporären Speicher",
-  "seo": {
-    "title": "Doc2MD - DOCX, DOC, PDF, PPTX kostenlos online in Markdown konvertieren",
-    "description": "Kostenloser Online-Dokument-zu-Markdown-Konverter. Konvertieren Sie Word (DOCX, DOC), PDF, PowerPoint (PPTX) sofort in Markdown. Datenschutz zuerst, keine Dateispeicherung, funktioniert in Ihrem Browser. Schnell und sicher."
-  },
-  "upload": {
-    "dragDrop": "Ziehen Sie Ihr Dokument hierher",
-    "orClick": "oder klicken Sie zum Hochladen",
-    "convert": "In Markdown konvertieren",
-    "supported": "Unterstützt: DOCX, PDF, PPTX (max. 10 MB)",
-    "processing": "Konvertierung läuft...",
-    "success": "✓ Konvertierung erfolgreich. Ihre Markdown-Datei wurde heruntergeladen.",
-    "error": "Konvertierung fehlgeschlagen"
-  },
-  "privacy": {
-    "title": "Datenschutz zuerst",
-    "noStorage": "Keine Speicherung",
-    "noTracking": "Kein Tracking",
-    "secure": "100% privat"
-  },
-  "footer": {
-    "openSource": "Open Source",
-    "github": "Auf GitHub ansehen"
-  }
+    "title": "Dokumente zu Markdown konvertieren",
+    "subtitle": "Schnell, privat, sicher — alle Konvertierungen erfolgen im temporären Speicher",
+    "seo": {
+        "title": "Doc2MD - DOCX, DOC, PDF, PPTX kostenlos online in Markdown konvertieren",
+        "description": "Kostenloser Online-Dokument-zu-Markdown-Konverter. Konvertieren Sie Word (DOCX, DOC), PDF, PowerPoint (PPTX) sofort in Markdown. Datenschutz zuerst, keine Dateispeicherung, funktioniert in Ihrem Browser. Schnell und sicher."
+    },
+    "upload": {
+        "dragDrop": "Ziehen Sie Ihr Dokument hierher",
+        "orClick": "oder klicken Sie zum Hochladen",
+        "convert": "In Markdown konvertieren",
+        "supported": "Unterstützt: DOCX, PDF, PPTX (max. 10 MB)",
+        "processing": "Konvertierung läuft...",
+        "success": "✓ Konvertierung erfolgreich. Ihre Markdown-Datei wurde heruntergeladen.",
+        "error": "Konvertierung fehlgeschlagen"
+    },
+    "privacy": {
+        "title": "Datenschutz zuerst",
+        "noStorage": "Keine Speicherung",
+        "noTracking": "Kein Tracking",
+        "secure": "100% privat"
+    },
+    "footer": {
+        "github": "GitHub",
+        "copyright": "© {year} Doc2MD Team",
+        "followUs": "Folgen Sie uns"
+    }
 }

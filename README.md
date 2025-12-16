@@ -15,11 +15,8 @@ Convert your documents (DOCX, PDF, PPTX, XLSX, HTML) to clean Markdown format in
 ## Quick Start
 
 ```bash
-# Start backend services
+# Start backend and frontend services
 ./scripts/dev.sh
-
-# Start frontend (new terminal)
-cd apps/frontend && pnpm install && pnpm dev
 ```
 
 Visit http://localhost:3000

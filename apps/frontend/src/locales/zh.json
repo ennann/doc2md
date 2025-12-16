@@ -1,27 +1,28 @@
 {
-  "title": "将文档转换为 Markdown",
-  "subtitle": "快速、私密、安全 — 所有转换都在临时内存中进行",
-  "seo": {
-    "title": "Doc2MD - 在线免费将 DOCX、DOC、PDF、PPTX 转换为 Markdown",
-    "description": "免费在线文档转 Markdown 工具。快速将 Word（DOCX、DOC）、PDF、PowerPoint（PPTX）转换为 Markdown。隐私优先，不存储文件，浏览器本地处理。快速安全。"
-  },
-  "upload": {
-    "dragDrop": "拖拽文档到这里",
-    "orClick": "或点击上传",
-    "convert": "转换为 Markdown",
-    "supported": "支持：DOCX、PDF、PPTX（最大 10MB）",
-    "processing": "转换中...",
-    "success": "✓ 转换成功。您的 Markdown 文件已下载。",
-    "error": "转换失败"
-  },
-  "privacy": {
-    "title": "隐私优先",
-    "noStorage": "不存储文件",
-    "noTracking": "无追踪分析",
-    "secure": "完全私密"
-  },
-  "footer": {
-    "openSource": "开源项目",
-    "github": "在 GitHub 上查看"
-  }
+    "title": "文档转 Markdown 从未如此简单",
+    "subtitle": "企业级安全保障 · 转换后自动销毁 · 零学习成本",
+    "seo": {
+        "title": "Doc2MD - 安全、免费的在线文档转 Markdown 工具",
+        "description": "简单好用的文档格式转换工具。支持 Word、PDF、PPT 一键转为 Markdown。文件处理完立即物理销毁，绝不保留。无需登录，即开即用。"
+    },
+    "upload": {
+        "dragDrop": "将文档拖到这里",
+        "orClick": "或点击选择文件",
+        "convert": "立即开始转换",
+        "supported": "支持格式：Word、PDF、PPT（最大 10MB）",
+        "processing": "正在安全处理中...",
+        "success": "✓ 转换完成！您的文件已安全下载。",
+        "error": "转换遇到问题，请重试"
+    },
+    "privacy": {
+        "title": "安全承诺",
+        "noStorage": "阅后即焚",
+        "noTracking": "无痕操作",
+        "secure": "企业级加密"
+    },
+    "footer": {
+        "github": "GitHub",
+        "copyright": "© {year} Doc2MD Team",
+        "followUs": "关注我们"
+    }
 }
