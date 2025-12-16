@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException, Header, Depends
+from fastapi import FastAPI, File, UploadFile, HTTPException, Header, Depends, BackgroundTasks, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uuid
@@ -8,6 +8,7 @@ from rq import Queue
 from app.config import settings
 from app.redis_client import get_redis
 from app.models import TaskResponse, HealthResponse
+from app import db
 
 app = FastAPI(
     title="Doc2MD API",
@@ -25,6 +26,12 @@ app.add_middleware(
 )
 
 
+@app.on_event("startup")
+async def startup_event():
+    """Initialize database on startup"""
+    db.init_db()
+
+
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     """Health check endpoint"""
@@ -38,8 +45,24 @@ async def health_check():
     return HealthResponse(status="ok", redis=redis_status)
 
 
+@app.get("/stats")
+async def get_stats(x_deploy_token: str = Header(None)):
+    """Get conversion stats (protected)"""
+    # Simple protection using the same deploy token
+    if settings.deploy_token and x_deploy_token != settings.deploy_token:
+        # Allow if no deploy token set (dev mode) or match failed
+        if settings.deploy_token:
+             raise HTTPException(status_code=401, detail="Invalid token")
+    
+    return db.get_stats()
+
+
 @app.post("/convert", response_model=TaskResponse)
-async def convert_document(file: UploadFile = File(...)):
+async def convert_document(
+    background_tasks: BackgroundTasks,
+    request: Request,
+    file: UploadFile = File(...)
+):
     """
     Upload a document for conversion to Markdown.
     Returns a task_id for polling the conversion status.
@@ -59,15 +82,25 @@ async def convert_document(file: UploadFile = File(...)):
 
     # Read file bytes
     file_bytes = await file.read()
+    
+    # Extract Client IP (support proxy headers)
+    client_ip = request.client.host
+    if request.headers.get("x-forwarded-for"):
+        client_ip = request.headers.get("x-forwarded-for").split(",")[0].strip()
+    elif request.headers.get("x-real-ip"):
+        client_ip = request.headers.get("x-real-ip")
+        
+    # Extract other headers
+    user_agent = request.headers.get("user-agent")
+    accept_language = request.headers.get("accept-language")
+    
+    # Log conversion stats asynchronously
+    background_tasks.add_task(db.log_conversion, file.filename, len(file_bytes), client_ip, user_agent, accept_language)
 
     # Store file data and metadata in Redis
     redis_client = get_redis()
-    task_data = {
-        "file_bytes": file_bytes,
-        "filename": file.filename,
-        "status": "queued"
-    }
-
+    # task_data is not actually used here, just defined
+    
     # Store in Redis with TTL
     redis_client.setex(
         f"task:{task_id}",

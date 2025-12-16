@@ -1,0 +1,58 @@
+name: Auto Deploy
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Trigger Deployment Webhook
+        env:
+          DEPLOY_URL: "https://deploy.doc2md.org/"
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          # Robust Deployment Script with Exponential Backoff
+          MAX_RETRIES=5
+          BASE_DELAY=2
+          
+          echo "🚀 Triggering deployment at $DEPLOY_URL"
+          
+          for ((i=1; i<=MAX_RETRIES; i++)); do
+            echo "Attempt $i/$MAX_RETRIES..."
+            
+            # Curl with:
+            # -s: Silent mode
+            # -o /dev/null: Discard output
+            # -w "%{http_code}": Print status code
+            # --max-time 10: Timeout (webhook responds fast, deployment is async)
+            
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+              --max-time 10 \
+              -X POST \
+              -H "X-Deploy-Secret: $DEPLOY_TOKEN" \
+              "$DEPLOY_URL")
+            
+            if [ "$HTTP_CODE" -eq 200 ]; then
+              echo "✅ Deployment triggered successfully!"
+              exit 0
+            elif [ "$HTTP_CODE" -eq 403 ]; then
+              echo "⛔ Auth Failed (403). Check DEPLOY_TOKEN."
+              exit 1
+            else
+              echo "⚠️ Request failed with status $HTTP_CODE"
+            fi
+            
+            if [ $i -lt $MAX_RETRIES ]; then
+              # Calculate delay: BASE_DELAY * 2^(i-1)
+              DELAY=$((BASE_DELAY * (2 ** (i-1))))
+              echo "⏳ Retrying in $DELAY seconds..."
+              sleep $DELAY
+            fi
+          done
+          
+          echo "❌ Deployment failed after $MAX_RETRIES attempts."
+          exit 1

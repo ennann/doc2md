@@ -28,6 +28,8 @@ services:
     container_name: doc2md-backend
     ports:
       - "8200:8000"  # 宿主机:8200 -> 容器:8000
+    volumes:
+      - ./apps/backend/data:/app/data
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379

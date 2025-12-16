@@ -37,6 +37,10 @@ env/
 .codex/
 *~
 
+# Database
+**/*.db
+**/*.sqlite
+
 # Logs
 logs/
 *.log
