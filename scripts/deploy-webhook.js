@@ -68,10 +68,17 @@ const server = http.createServer((req, res) => {
 
   console.log(`[${new Date().toISOString()}] 🚀 Deploy triggered from ${req.socket.remoteAddress}`);
   
-  // Trigger Deployment
-  const deployScript = path.join(__dirname, 'deploy.sh');
+  // Check for fast mode
+  const isFast = url.searchParams.get('fast') === 'true' || url.searchParams.get('f') === 'true';
+  const args = [path.join(__dirname, 'deploy.sh')];
+  
+  if (isFast) {
+    args.push('-f');
+    console.log('⚡ Triggering Fast Mode deployment');
+  }
+
   // Use spawn to run shell script
-  const child = spawn('bash', [deployScript], {
+  const child = spawn('bash', args, {
     cwd: path.join(__dirname, '..'), // Run from root
     stdio: 'inherit' // Pipe output to this process's stdout (logs visible in PM2)
   });
@@ -84,11 +91,12 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify({ 
     status: 'deploying', 
-    message: 'Deployment triggered successfully. Check logs for progress.' 
+    mode: isFast ? 'fast' : 'standard',
+    message: 'Deployment triggered successfully. check logs for progress.' 
   }));
 });
 
 server.listen(PORT, () => {
   console.log(`Deploy Hook listening on port ${PORT}`);
-  console.log(`Test with: curl -X POST http://localhost:${PORT}?secret=${SECRET}`);
+  console.log(`Test with: curl -X POST http://localhost:${PORT}?secret=${SECRET}&fast=true`);
 });

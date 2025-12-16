@@ -12,8 +12,22 @@
 set -e
 
 # Check if running in production mode
-ENV_MODE="${1:-dev}"
-ENV_FILE=""
+# Parse arguments
+FAST_MODE=false
+
+# Loop through all arguments
+for arg in "$@"; do
+    case $arg in
+        -f|--fast)
+        FAST_MODE=true
+        shift # Remove --fast from processing
+        ;;
+        prod|production)
+        ENV_MODE="prod"
+        shift
+        ;;
+    esac
+done
 
 if [ "$ENV_MODE" = "prod" ] || [ "$ENV_MODE" = "production" ]; then
     echo "🚀 Starting Doc2MD backend deployment (PRODUCTION MODE)..."
@@ -29,6 +43,10 @@ else
     echo "🚀 Starting Doc2MD backend deployment (DEVELOPMENT MODE)..."
 fi
 
+if [ "$FAST_MODE" = "true" ]; then
+    echo "⚡ FAST MODE: Skipping cleanup and extra checks."
+fi
+
 # Navigate to project directory
 cd "$(dirname "$0")/.." || exit 1
 
@@ -36,13 +54,8 @@ cd "$(dirname "$0")/.." || exit 1
 echo "📥 Pulling latest changes from git..."
 git pull origin main
 
-# Stop existing services
-echo "🛑 Stopping existing backend services..."
-docker compose down
-
-# Remove old images
-echo "🧹 Cleaning up old images..."
-docker image prune -f
+# Note: We rely on Docker's smart build caching and restart policies.
+# We do NOT run 'docker compose down' to avoid downtime and unnecessary container reconstruction.
 
 # Build and start backend services only
 echo "🏗️  Building and starting backend services (API + Worker + Redis)..."
@@ -71,9 +84,13 @@ else
     exit 1
 fi
 
-# Clean up
-echo "🧹 Cleaning up unused Docker resources..."
-docker system prune -f
+# Clean up (Skipped in fast mode)
+if [ "$FAST_MODE" = "false" ]; then
+    echo "🧹 Cleaning up unused Docker resources..."
+    docker image prune -f
+else
+    echo "⚡ FAST MODE: Skipping image pruning."
+fi
 
 echo ""
 echo "✅ Backend deployment completed successfully!"
