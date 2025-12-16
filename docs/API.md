@@ -4,7 +4,7 @@ Complete API documentation for Doc2MD backend.
 
 ## Base URL
 
-- **Development**: `http://localhost:8100`
+- **Development**: `http://localhost:8200`
 - **Production**: `https://api.doc2md.org`
 
 ## Authentication
@@ -82,7 +82,7 @@ Content-Type: multipart/form-data
 
 **cURL**:
 ```bash
-curl -X POST http://localhost:8100/convert \
+curl -X POST http://localhost:8200/convert \
   -F "file=@/path/to/document.docx" \
   -H "Accept: application/json"
 ```
@@ -93,7 +93,7 @@ import requests
 
 with open('document.docx', 'rb') as f:
     response = requests.post(
-        'http://localhost:8100/convert',
+        'http://localhost:8200/convert',
         files={'file': f}
     )
 
@@ -106,7 +106,7 @@ print(f"Task ID: {result['task_id']}")
 const formData = new FormData();
 formData.append('file', fileInput.files[0]);
 
-const response = await fetch('http://localhost:8100/convert', {
+const response = await fetch('http://localhost:8200/convert', {
   method: 'POST',
   body: formData
 });
@@ -176,7 +176,7 @@ Get the status and result of a conversion task.
 
 **cURL**:
 ```bash
-curl http://localhost:8100/task/550e8400-e29b-41d4-a716-446655440000
+curl http://localhost:8200/task/550e8400-e29b-41d4-a716-446655440000
 ```
 
 **Python with Polling**:
@@ -187,7 +187,7 @@ import time
 task_id = "550e8400-e29b-41d4-a716-446655440000"
 
 while True:
-    response = requests.get(f'http://localhost:8100/task/{task_id}')
+    response = requests.get(f'http://localhost:8200/task/{task_id}')
     result = response.json()
 
     if result['status'] == 'success':
@@ -209,7 +209,7 @@ async function pollTaskStatus(taskId) {
   let attempts = 0;
 
   while (attempts < maxAttempts) {
-    const response = await fetch(`http://localhost:8100/task/${taskId}`);
+    const response = await fetch(`http://localhost:8200/task/${taskId}`);
     const result = await response.json();
 
     if (result.status === 'success') {
@@ -258,7 +258,7 @@ No parameters required.
 
 **cURL**:
 ```bash
-curl http://localhost:8100/health
+curl http://localhost:8200/health
 ```
 
 **Monitoring Script**:
@@ -266,7 +266,7 @@ curl http://localhost:8100/health
 #!/bin/bash
 # health-check.sh
 
-response=$(curl -s http://localhost:8100/health)
+response=$(curl -s http://localhost:8200/health)
 redis_status=$(echo $response | jq -r '.redis')
 
 if [ "$redis_status" != "connected" ]; then
@@ -317,7 +317,7 @@ X-Deploy-Token: your-secret-token
 
 **cURL**:
 ```bash
-curl -X POST http://localhost:8100/deploy \
+curl -X POST http://localhost:8200/deploy \
   -H "X-Deploy-Token: your-secret-token"
 ```
 
@@ -407,7 +407,7 @@ import requests
 import time
 
 class Doc2MDClient:
-    def __init__(self, base_url='http://localhost:8100'):
+    def __init__(self, base_url='http://localhost:8200'):
         self.base_url = base_url
 
     def convert(self, file_path, timeout=120):
@@ -446,7 +446,7 @@ class Doc2MDClient:
         return response.json()
 
 # Usage
-client = Doc2MDClient('http://localhost:8100')
+client = Doc2MDClient('http://localhost:8200')
 markdown = client.convert('document.docx')
 print(markdown)
 ```
@@ -455,7 +455,7 @@ print(markdown)
 
 ```typescript
 class Doc2MDClient {
-  constructor(private baseUrl: string = 'http://localhost:8100') {}
+  constructor(private baseUrl: string = 'http://localhost:8200') {}
 
   async convert(file: File, timeout: number = 120000): Promise<string> {
     const formData = new FormData();
@@ -500,7 +500,7 @@ class Doc2MDClient {
 }
 
 // Usage
-const client = new Doc2MDClient('http://localhost:8100');
+const client = new Doc2MDClient('http://localhost:8200');
 const markdown = await client.convert(fileInput.files[0]);
 console.log(markdown);
 ```
@@ -511,9 +511,9 @@ console.log(markdown);
 
 Interactive API documentation is available at:
 
-- **Swagger UI**: http://localhost:8100/docs
-- **ReDoc**: http://localhost:8100/redoc
-- **OpenAPI JSON**: http://localhost:8100/openapi.json
+- **Swagger UI**: http://localhost:8200/docs
+- **ReDoc**: http://localhost:8200/redoc
+- **OpenAPI JSON**: http://localhost:8200/openapi.json
 
 ---
 
@@ -531,20 +531,20 @@ pytest
 
 ```bash
 # Test full conversion flow
-curl -X POST http://localhost:8100/convert \
+curl -X POST http://localhost:8200/convert \
   -F "file=@test.docx" \
   | jq -r '.task_id' \
-  | xargs -I {} curl http://localhost:8100/task/{}
+  | xargs -I {} curl http://localhost:8200/task/{}
 ```
 
 ### Load Testing
 
 ```bash
 # Using Apache Bench
-ab -n 100 -c 10 http://localhost:8100/health
+ab -n 100 -c 10 http://localhost:8200/health
 
 # Using hey
-hey -n 100 -c 10 http://localhost:8100/health
+hey -n 100 -c 10 http://localhost:8200/health
 ```
 
 ---

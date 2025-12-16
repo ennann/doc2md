@@ -87,7 +87,7 @@ chmod +x scripts/*.sh
 
 This will start:
 - Redis (port 6380)
-- Backend API (port 8100)
+- Backend API (port 8200)
 - Worker (2 instances)
 
 #### Method 2: Manual Start
@@ -114,8 +114,8 @@ Frontend will be available at http://localhost:3000
 ### Accessing Services
 
 - **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8100
-- **API Documentation**: http://localhost:8100/docs
+- **Backend API**: http://localhost:8200
+- **API Documentation**: http://localhost:8200/docs
 - **Redis**: localhost:6380
 
 ### Multi-language Access
@@ -204,7 +204,7 @@ server {
     server_name api.doc2md.org;
 
     location / {
-        proxy_pass http://localhost:8100;
+        proxy_pass http://localhost:8200;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
@@ -293,7 +293,7 @@ File: `apps/frontend/.env.local`
 
 ```env
 # Backend API URL
-NEXT_PUBLIC_API_URL=http://localhost:8100  # Use https://api.doc2md.org in production
+NEXT_PUBLIC_API_URL=http://localhost:8200  # Use https://api.doc2md.org in production
 ```
 
 ### Worker Configuration
@@ -507,7 +507,7 @@ server {
     server_name api.doc2md.org;
 
     location / {
-        proxy_pass http://localhost:8100;
+        proxy_pass http://localhost:8200;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -528,7 +528,7 @@ server {
 #### Upload a file
 
 ```bash
-curl -X POST http://localhost:8100/convert \
+curl -X POST http://localhost:8200/convert \
   -F "file=@/path/to/document.docx" \
   -H "Accept: application/json"
 ```
@@ -544,7 +544,7 @@ Response:
 #### Check task status
 
 ```bash
-curl http://localhost:8100/task/abc-123-def-456
+curl http://localhost:8200/task/abc-123-def-456
 ```
 
 Response:
@@ -559,7 +559,7 @@ Response:
 #### Health check
 
 ```bash
-curl http://localhost:8100/health
+curl http://localhost:8200/health
 ```
 
 Response:
