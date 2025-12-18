@@ -32,7 +32,7 @@ export default async function Home({ params }: PageProps) {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      ratingCount: '1000',
+      ratingCount: '10000',
     },
     featureList: [
       'Convert DOCX to Markdown',
