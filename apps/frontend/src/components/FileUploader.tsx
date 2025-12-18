@@ -53,7 +53,7 @@ export default function FileUploader({ t }: FileUploaderProps) {
   }, [file]);
 
   const validateFile = (selectedFile: File): boolean => {
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    const maxSize = 100 * 1024 * 1024; // 100MB
     const allowedTypes = [
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
       'application/pdf',
@@ -61,7 +61,7 @@ export default function FileUploader({ t }: FileUploaderProps) {
     ];
 
     if (selectedFile.size > maxSize) {
-      setError('File size exceeds 10MB limit');
+      setError('File size exceeds 100MB limit');
       setStatus('error');
       return false;
     }

@@ -9,7 +9,7 @@
         "dragDrop": "ドキュメントをここにドラッグ&ドロップ",
         "orClick": "またはクリックしてアップロード",
         "convert": "Markdownに変換",
-        "supported": "対応: DOCX、PDF、PPTX（最大10MB）",
+        "supported": "対応: DOCX、PDF、PPTX（最大100MB）",
         "processing": "変換中...",
         "success": "✓ 変換完了。Markdownファイルがダウンロードされました。",
         "error": "変換失敗"

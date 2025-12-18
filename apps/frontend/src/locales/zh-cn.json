@@ -9,7 +9,7 @@
         "dragDrop": "将文档拖到这里",
         "orClick": "或点击选择文件",
         "convert": "立即开始转换",
-        "supported": "支持格式：Word、PDF、PPT（最大 10MB）",
+        "supported": "支持格式：Word、PDF、PPT（最大 100MB）",
         "processing": "正在安全处理中...",
         "success": "✓ 转换完成！您的文件已安全下载。",
         "error": "转换遇到问题，请重试"

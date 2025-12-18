@@ -9,7 +9,7 @@
         "dragDrop": "문서를 여기에 놓으세요",
         "orClick": "또는 클릭하여 파일 선택",
         "convert": "지금 변환하기",
-        "supported": "지원 형식: Word, PDF, PPT (최대 10MB)",
+        "supported": "지원 형식: Word, PDF, PPT (최대 100MB)",
         "processing": "안전하게 처리 중...",
         "success": "✓ 변환 완료! 파일이 다운로드되었습니다.",
         "error": "문제가 발생했습니다. 다시 시도해주세요."

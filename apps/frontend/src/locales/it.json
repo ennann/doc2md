@@ -9,7 +9,7 @@
         "dragDrop": "Trascina il tuo documento qui",
         "orClick": "o clicca per selezionare",
         "convert": "Converti Ora",
-        "supported": "Formati: Word, PDF, PPT (Max 10MB)",
+        "supported": "Formati: Word, PDF, PPT (Max 100MB)",
         "processing": "Elaborazione sicura in corso...",
         "success": "✓ Conversione completata! Il tuo file è stato scaricato.",
         "error": "Si è verificato un problema, riprova"

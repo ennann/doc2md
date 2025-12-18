@@ -9,7 +9,7 @@
         "dragDrop": "Glissez-déposez votre document ici",
         "orClick": "ou cliquez pour télécharger",
         "convert": "Convertir en Markdown",
-        "supported": "Formats : DOCX, PDF, PPTX (max 10 Mo)",
+        "supported": "Formats : DOCX, PDF, PPTX (max 100 Mo)",
         "processing": "Conversion en cours...",
         "success": "✓ Conversion réussie. Votre fichier Markdown est téléchargé.",
         "error": "Échec de la conversion"

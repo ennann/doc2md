@@ -9,7 +9,7 @@
         "dragDrop": "Drag & drop document here",
         "orClick": "or click to browse",
         "convert": "Start Conversion",
-        "supported": "Supports: Word, PDF, PPT (Max 10MB)",
+        "supported": "Supports: Word, PDF, PPT (Max 100MB)",
         "processing": "Securely processing...",
         "success": "✓ Complete! Your file has been safely downloaded.",
         "error": "Conversion failed, please try again"
