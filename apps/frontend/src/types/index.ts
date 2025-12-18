@@ -9,4 +9,4 @@ export interface ConvertRequest {
   file: File;
 }
 
-export type Locale = 'en' | 'zh' | 'ja' | 'fr' | 'de';
+export type Locale = 'en' | 'zh-cn' | 'zh-hk' | 'zh-tw' | 'ja' | 'fr' | 'de' | 'es' | 'pt-br' | 'ko' | 'it';

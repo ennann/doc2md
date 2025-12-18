@@ -1,0 +1,96 @@
+{
+    "title": "Converta Documentos para Markdown Facilmente",
+    "subtitle": "Segurança empresarial · Destruição automática · Sem curva de aprendizado",
+    "seo": {
+        "title": "Doc2MD - Conversor Online Gratuito de Documentos para Markdown",
+        "description": "Ferramenta simples para converter formatos. Suporta Word, PDF, PPT para Markdown em um clique. Arquivos destruídos fisicamente após processamento. Sem login, uso imediato."
+    },
+    "upload": {
+        "dragDrop": "Arraste seu documento aqui",
+        "orClick": "ou clique para selecionar",
+        "convert": "Converter Agora",
+        "supported": "Formatos: Word, PDF, PPT (Máx 10MB)",
+        "processing": "Processando com segurança...",
+        "success": "✓ Conversão concluída! Seu arquivo foi baixado.",
+        "error": "Houve um problema, tente novamente"
+    },
+    "privacy": {
+        "title": "Compromisso de Segurança",
+        "noStorage": "Leitura e Destruição",
+        "noTracking": "Sem Rastros",
+        "secure": "Criptografia Empresarial"
+    },
+    "footer": {
+        "github": "GitHub",
+        "copyright": "© {year} Equipe Doc2MD",
+        "followUs": "Siga-nos",
+        "privacyPolicy": "Privacidade",
+        "support": "Suporte",
+        "viewOnGitHub": "Código no GitHub"
+    },
+    "privacyPage": {
+        "title": "Política de Privacidade",
+        "lastUpdated": "Última atualização: 18 de dezembro de 2025",
+        "intro": "No Doc2MD, priorizamos sua privacidade. Comprometemo-nos a manusear seus documentos de forma segura e transparente.",
+        "collection": {
+            "title": "1. Informações que Coletamos",
+            "content": "Além do conteúdo dos documentos enviados para conversão, não coletamos informações de identificação pessoal (PII) como nomes ou endereços.",
+            "data": "Dados agregados: Podemos coletar dados analíticos anônimos (navegador, dispositivo) para melhorar o serviço."
+        },
+        "processing": {
+            "title": "2. Processamento e Segurança",
+            "point1": "Apenas processamento: Seus documentos são usados apenas para conversão para Markdown.",
+            "point2": "Sem armazenamento permanente: Arquivos originais e convertidos são excluídos imediatamente de nossos servidores após o processo.",
+            "point3": "Sem acesso humano: O processo é automatizado e ninguém acessa seu conteúdo."
+        },
+        "thirdParty": {
+            "title": "3. Serviços de Terceiros",
+            "content": "Podemos usar serviços confiáveis como Google Analytics para analisar tráfego web."
+        },
+        "cookies": {
+            "title": "4. Cookies",
+            "content": "Usamos Cookies apenas para funções técnicas e análise. Você pode desativá-los no seu navegador."
+        },
+        "contact": {
+            "title": "5. Contato",
+            "content": "Se tiver dúvidas, contate-nos em {email}."
+        },
+        "backHome": "Voltar ao Início"
+    },
+    "supportPage": {
+        "title": "Suporte e Perguntas Frequentes",
+        "subtitle": "Tem perguntas? Temos respostas.",
+        "faqTitle": "Perguntas Frequentes",
+        "faqs": {
+            "free": {
+                "q": "O Doc2MD é totalmente gratuito?",
+                "a": "Sim! Doc2MD é gratuito, sem custos ocultos."
+            },
+            "formats": {
+                "q": "Quais formatos são suportados?",
+                "a": "Suportamos Word (DOC, DOCX), PDF e PowerPoint (PPT, PPTX)."
+            },
+            "security": {
+                "q": "Meus dados estão seguros?",
+                "a": "Absolutamente. Usamos HTTPS e excluímos arquivos imediatamente após a conversão."
+            },
+            "speed": {
+                "q": "Por que minha conversão demora?",
+                "a": "Depende do tamanho e complexidade. A maioria leva segundos."
+            },
+            "batch": {
+                "q": "Suportam conversão em lote?",
+                "a": "Por enquanto processamos um arquivo por vez para máxima qualidade."
+            },
+            "offline": {
+                "q": "Posso usar offline?",
+                "a": "Sim, consulte nosso {link} para implantar localmente."
+            }
+        },
+        "contactTitle": "Suporte",
+        "contactText": "Precisa de ajuda específica? Nossa equipe está aqui.",
+        "privacyTitle": "Privacidade Primeiro",
+        "privacyText": "Sua privacidade é crucial. Leia nossa política.",
+        "readPrivacy": "Ler Política"
+    }
+}

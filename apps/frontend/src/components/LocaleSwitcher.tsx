@@ -11,8 +11,14 @@ const locales: { code: Locale; label: string; flag: string }[] = [
   { code: 'en', label: 'English', flag: 'us' },
   { code: 'fr', label: 'Français', flag: 'fr' },
   { code: 'de', label: 'Deutsch', flag: 'de' },
-  { code: 'zh', label: '中文', flag: 'cn' },
+  { code: 'es', label: 'Español', flag: 'es' },
+  { code: 'pt-br', label: 'Português', flag: 'br' },
+  { code: 'it', label: 'Italiano', flag: 'it' },
+  { code: 'zh-cn', label: '简体中文', flag: 'cn' },
+  { code: 'zh-hk', label: '繁體 (香港)', flag: 'hk' },
+  { code: 'zh-tw', label: '繁體 (台灣)', flag: 'tw' },
   { code: 'ja', label: '日本語', flag: 'jp' },
+  { code: 'ko', label: '한국어', flag: 'kr' },
 ];
 
 interface LocaleSwitcherProps {
