@@ -23,6 +23,74 @@
     "footer": {
         "github": "GitHub",
         "copyright": "© {year} Doc2MD Team",
-        "followUs": "Suivez-nous"
+        "followUs": "Suivez-nous",
+        "privacyPolicy": "Politique de confidentialité",
+        "support": "Support",
+        "viewOnGitHub": "Voir sur GitHub"
+    },
+    "privacyPage": {
+        "title": "Politique de confidentialité",
+        "lastUpdated": "Dernière mise à jour : 18 décembre 2025",
+        "intro": "Chez Doc2MD, nous considérons la vie privée de nos utilisateurs comme notre priorité absolue. Nous nous engageons à traiter vos documents de manière sécurisée et transparente. Cette politique de confidentialité décrit nos pratiques concernant la collecte et l'utilisation des données.",
+        "collection": {
+            "title": "1. Informations que nous collectons",
+            "content": "À l'exception du contenu du document que vous téléchargez pour conversion, nous ne collectons strictement aucune information personnellement identifiable (PII) comme votre nom, adresse ou numéro de téléphone.",
+            "data": "Données d'utilisation agrégées : Nous pouvons collecter des données analytiques anonymes et non personnelles (telles que le type de navigateur, le type d'appareil et la source de référence) pour nous aider à comprendre comment notre service est utilisé et à améliorer ses performances."
+        },
+        "processing": {
+            "title": "2. Traitement des documents et sécurité",
+            "point1": "Traitement uniquement : Les documents que vous téléchargez sont utilisés uniquement dans le but de les convertir au format Markdown.",
+            "point2": "Pas de stockage permanent : Nous ne stockons pas vos fichiers de manière permanente. Une fois le processus de conversion terminé et votre fichier renvoyé, les fichiers originaux et convertis sont immédiatement supprimés de nos serveurs de traitement.",
+            "point3": "Pas d'accès manuel : Notre processus de conversion est automatisé. Aucun humain n'accède au contenu de vos fichiers pendant ce processus."
+        },
+        "thirdParty": {
+            "title": "3. Services tiers",
+            "content": "Nous pouvons utiliser des services tiers de confiance (tels que Google Analytics) pour analyser le trafic web. Ces tiers ont leurs propres politiques de confidentialité concernant l'utilisation de ces informations."
+        },
+        "cookies": {
+            "title": "4. Cookies",
+            "content": "Nous utilisons des cookies uniquement à des fins de fonctionnement technique et d'analyse pour améliorer votre expérience utilisateur. Vous pouvez choisir de désactiver les cookies via les paramètres de votre navigateur, bien que cela puisse affecter certaines fonctionnalités du site."
+        },
+        "contact": {
+            "title": "5. Contactez-nous",
+            "content": "Si vous avez des questions ou des préoccupations concernant cette politique de confidentialité, n'hésitez pas à nous contacter à {email}."
+        },
+        "backHome": "Retour à l'accueil"
+    },
+    "supportPage": {
+        "title": "Support et FAQ",
+        "subtitle": "Des questions ? Nous avons des réponses. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à nous contacter.",
+        "faqTitle": "Questions fréquemment posées",
+        "faqs": {
+            "free": {
+                "q": "Doc2MD est-il complètement gratuit ?",
+                "a": "Oui ! Doc2MD est un outil gratuit créé pour aider la communauté à convertir facilement des documents. Il n'y a pas de frais cachés, d'abonnements ou de niveaux premium."
+            },
+            "formats": {
+                "q": "Quels formats de fichiers prenez-vous en charge ?",
+                "a": "Nous prenons actuellement en charge les formats suivants : Microsoft Word (DOC, DOCX), PDF et PowerPoint (PPT, PPTX). Nous travaillons constamment à l'ajout de nouveaux formats."
+            },
+            "security": {
+                "q": "Mes données sont-elles en sécurité ?",
+                "a": "Absolument. Nous utilisons des connexions HTTPS sécurisées pour tous les transferts de fichiers. Vos fichiers sont traités sur nos serveurs automatisés et sont définitivement supprimés immédiatement après le processus de conversion. Nous ne stockons, ne voyons ni ne partageons votre contenu."
+            },
+            "speed": {
+                "q": "Pourquoi la conversion de mon fichier prend-elle autant de temps ?",
+                "a": "La vitesse de conversion dépend de la taille et de la complexité du fichier (par exemple, beaucoup d'images ou une mise en forme complexe). La plupart des fichiers sont convertis en quelques secondes. Si cela prend plus d'une minute, veuillez vérifier votre connexion Internet et réessayer."
+            },
+            "batch": {
+                "q": "Prenez-vous en charge la conversion par lots ?",
+                "a": "Actuellement, nous traitons un fichier à la fois pour garantir une qualité et une confidentialité maximales. Nous pourrions envisager d'ajouter le traitement par lots dans les futures mises à jour."
+            },
+            "offline": {
+                "q": "Puis-je utiliser Doc2MD hors ligne ?",
+                "a": "Oui, vous le pouvez. Veuillez visiter notre {link} pour voir les méthodes de déploiement."
+            }
+        },
+        "contactTitle": "Contact support",
+        "contactText": "Besoin d'aide pour un problème spécifique ou une demande de fonctionnalité ? Notre équipe est là pour vous aider.",
+        "privacyTitle": "Confidentialité d'abord",
+        "privacyText": "Votre vie privée compte. Lisez notre politique pour savoir comment nous protégeons vos données.",
+        "readPrivacy": "Lire la politique de confidentialité"
     }
 }

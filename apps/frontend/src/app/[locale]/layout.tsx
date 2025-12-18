@@ -125,14 +125,21 @@ export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
   ];
 }
 
+import Header from '@/components/Header';
+
+
+
 export default async function RootLayout({ children, params }: RootLayoutProps) {
   const { locale } = await params;
 
   return (
-    <html lang={locale as Locale} className={inter.variable}>
+    <html lang={locale as Locale} className={inter.variable} suppressHydrationWarning>
       <body className="antialiased">
         <GoogleAnalytics />
-        {children}
+        <Header locale={locale as Locale} />
+        <div className="pt-20">
+          {children}
+        </div>
       </body>
     </html>
   );

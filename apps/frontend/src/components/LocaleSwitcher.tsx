@@ -4,14 +4,15 @@ import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
 import type { Locale } from '@/types';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
-const locales: { code: Locale; label: string }[] = [
-  { code: 'en', label: 'EN' },
-  { code: 'de', label: 'DE' },
-  { code: 'fr', label: 'FR' },
-  { code: 'zh', label: '中文' },
-  { code: 'ja', label: '日本語' },
+const locales: { code: Locale; label: string; flag: string }[] = [
+  { code: 'en', label: 'English', flag: 'us' },
+  { code: 'fr', label: 'Français', flag: 'fr' },
+  { code: 'de', label: 'Deutsch', flag: 'de' },
+  { code: 'zh', label: '中文', flag: 'cn' },
+  { code: 'ja', label: '日本語', flag: 'jp' },
 ];
 
 interface LocaleSwitcherProps {
@@ -23,8 +24,25 @@ export default function LocaleSwitcher({ currentLocale }: LocaleSwitcherProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const switcherRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (switcherRef.current && !switcherRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   const handleLocaleChange = (newLocale: Locale) => {
-    // Split pathname and replace the locale segment
     const segments = pathname.split('/').filter(Boolean);
     if (segments.length > 0 && segments[0] === currentLocale) {
       segments[0] = newLocale;
@@ -34,42 +52,53 @@ export default function LocaleSwitcher({ currentLocale }: LocaleSwitcherProps) {
     setIsOpen(false);
   };
 
+  const currentLocaleData = locales.find((l) => l.code === currentLocale);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={switcherRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border rounded-md"
         aria-label="Change language"
       >
-        <Globe className="h-4 w-4" />
+        {currentLocaleData && (
+             <Image 
+                src={`/flagpedia/${currentLocaleData.flag}.png`}
+                alt={currentLocaleData.label}
+                width={20}
+                height={15}
+                className="rounded-sm object-cover"
+             />
+        )}
         <span className="hidden sm:inline">
-          {locales.find((l) => l.code === currentLocale)?.label}
+          {currentLocaleData?.label}
         </span>
       </button>
 
       {isOpen && (
-        <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
-          />
-          <div className="absolute right-0 top-full mt-2 z-50 min-w-[8rem] overflow-hidden rounded-md border bg-background shadow-md animate-fade-in">
+        <div className="absolute right-0 top-full mt-2 z-50 min-w-[140px] overflow-hidden rounded-md border bg-background shadow-md animate-fade-in">
             <div className="p-1">
               {locales.map((locale) => (
                 <button
                   key={locale.code}
                   onClick={() => handleLocaleChange(locale.code)}
                   className={cn(
-                    'relative flex w-full cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground',
+                    'relative flex w-full cursor-pointer select-none items-center gap-3 rounded-sm px-3 py-2 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground',
                     currentLocale === locale.code && 'bg-accent text-accent-foreground'
                   )}
                 >
+                  <Image 
+                    src={`/flagpedia/${locale.flag}.png`}
+                    alt={locale.label}
+                    width={20}
+                    height={15}
+                    className="rounded-sm object-cover"
+                   />
                   {locale.label}
                 </button>
               ))}
             </div>
           </div>
-        </>
       )}
     </div>
   );

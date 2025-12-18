@@ -94,4 +94,184 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/" />
   </url>
 
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://doc2md.org/privacy/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/privacy/" />
+  </url>
+
+  <!-- Privacy Policy English -->
+  <url>
+    <loc>https://doc2md.org/en/privacy/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/privacy/" />
+  </url>
+
+  <!-- Privacy Policy Chinese -->
+  <url>
+    <loc>https://doc2md.org/zh/privacy/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/privacy/" />
+  </url>
+
+  <!-- Privacy Policy Japanese -->
+  <url>
+    <loc>https://doc2md.org/ja/privacy/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/privacy/" />
+  </url>
+
+  <!-- Privacy Policy French -->
+  <url>
+    <loc>https://doc2md.org/fr/privacy/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/privacy/" />
+  </url>
+
+  <!-- Privacy Policy German -->
+  <url>
+    <loc>https://doc2md.org/de/privacy/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/privacy/" />
+  </url>
+
+  <!-- Support Page -->
+  <url>
+    <loc>https://doc2md.org/support/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/support/" />
+  </url>
+
+  <!-- Support Page English -->
+  <url>
+    <loc>https://doc2md.org/en/support/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/support/" />
+  </url>
+
+  <!-- Support Page Chinese -->
+  <url>
+    <loc>https://doc2md.org/zh/support/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/support/" />
+  </url>
+
+  <!-- Support Page Japanese -->
+  <url>
+    <loc>https://doc2md.org/ja/support/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/support/" />
+  </url>
+
+  <!-- Support Page French -->
+  <url>
+    <loc>https://doc2md.org/fr/support/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/support/" />
+  </url>
+
+  <!-- Support Page German -->
+  <url>
+    <loc>https://doc2md.org/de/support/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://doc2md.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://doc2md.org/zh/support/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://doc2md.org/ja/support/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://doc2md.org/fr/support/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://doc2md.org/de/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doc2md.org/en/support/" />
+  </url>
+
 </urlset>

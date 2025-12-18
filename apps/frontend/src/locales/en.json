@@ -23,6 +23,74 @@
     "footer": {
         "github": "GitHub",
         "copyright": "© {year} Doc2MD Team",
-        "followUs": "Follow Us"
+        "followUs": "Follow Us",
+        "privacyPolicy": "Privacy Policy",
+        "support": "Support",
+        "viewOnGitHub": "View on GitHub"
+    },
+    "privacyPage": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: December 18, 2025",
+        "intro": "At Doc2MD, we regard the privacy of our users as our highest priority. We are committed to processing your documents securely and transparently. This Privacy Policy outlines our practices regarding data collection and usage.",
+        "collection": {
+            "title": "1. Information We Collect",
+            "content": "Other than the document content you upload for conversion, we do not strictly collect any personal identifiable information (PII) like your name, address, or phone number.",
+            "data": "Aggregate Usage Data: We may collect anonymous, non-personal analytical data (such as browser type, device type, and referral source) to help us understand how our service is used and improve its performance."
+        },
+        "processing": {
+            "title": "2. Document Processing & Security",
+            "point1": "Processing Only: The documents you upload are used solely for the purpose of converting them into Markdown format.",
+            "point2": "No Permanent Storage: We do not permanently store your files. Once the conversion process is complete and your file is returned, the original and converted files are immediately removed from our processing servers.",
+            "point3": "No Manual Access: Our conversion process is automated. No human accesses the content of your files during this process."
+        },
+        "thirdParty": {
+            "title": "3. Third-Party Services",
+            "content": "We may use trusted third-party services (such as Google Analytics) to analyze web traffic. These third parties have their own privacy policies addressing how they use such information."
+        },
+        "cookies": {
+            "title": "4. Cookies",
+            "content": "We use cookies purely for technical functionality and analytical purposes to enhance your user experience. You can choose to disable cookies through your browser settings, though this may affect some site functionality."
+        },
+        "contact": {
+            "title": "5. Contact Us",
+            "content": "If you have any questions or concerns regarding this Privacy Policy, please feel free to contact us at {email}."
+        },
+        "backHome": "Back to Home"
+    },
+    "supportPage": {
+        "title": "Support & FAQ",
+        "subtitle": "Have questions? We've got answers. If you can't find what you're looking for, feel free to reach out to us.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": {
+            "free": {
+                "q": "Is Doc2MD completely free?",
+                "a": "Yes! Doc2MD is a free tool created to help the community convert documents easily. There are no hidden fees, subscriptions, or premium tiers."
+            },
+            "formats": {
+                "q": "What file formats do you support?",
+                "a": "We currently support the following formats: Microsoft Word (DOC, DOCX), PDF, and PowerPoint (PPT, PPTX). We are constantly working on adding more formats."
+            },
+            "security": {
+                "q": "Is my data secure?",
+                "a": "Absolutely. We use secure HTTPS connections for all file transfers. Your files are processed on our automated servers and are permanently deleted immediately after the conversion process. We do not store, view, or share your content."
+            },
+            "speed": {
+                "q": "Why is my file conversion taking so long?",
+                "a": "Conversion speed depends on the file size and complexity (e.g., many images or complex formatting). Most files convert within seconds. If it takes longer than a minute, please check your internet connection and try again."
+            },
+            "batch": {
+                "q": "Do you support batch conversion?",
+                "a": "Currently, we process one file at a time to ensure maximum quality and privacy. We may consider adding batch processing in future updates."
+            },
+            "offline": {
+                "q": "Can I use Doc2MD offline?",
+                "a": "Yes, you can. Please visit our {link} to view deployment methods."
+            }
+        },
+        "contactTitle": "Contact Support",
+        "contactText": "Need help with a specific issue or have a feature request? Our team is here to assist you.",
+        "privacyTitle": "Privacy First",
+        "privacyText": "Your privacy matters. Read our policy to learn how we protect your data.",
+        "readPrivacy": "Read Privacy Policy"
     }
 }
