@@ -1,38 +1,14 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  output: 'export',
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: false,
-      },
-    ];
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
   },
-  async headers() {
-    return [
-      {
-        source: '/sitemap.xml',
-        headers: [
-          {
-            key: 'Content-Type',
-            value: 'application/xml',
-          },
-        ],
-      },
-      {
-        source: '/robots.txt',
-        headers: [
-          {
-            key: 'Content-Type',
-            value: 'text/plain',
-          },
-        ],
-      },
-    ];
-  },
+  // redirects 和 headers 已迁移到 public/_redirects 和 public/_headers
+  // 用于 Cloudflare Pages 静态部署
 };
 
 export default nextConfig;

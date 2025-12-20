@@ -1,0 +1,14 @@
+# Cloudflare Pages Headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/sitemap.xml
+  Content-Type: application/xml
+
+/robots.txt
+  Content-Type: text/plain
+
+# 安全响应头
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin

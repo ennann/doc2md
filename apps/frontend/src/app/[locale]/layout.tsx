@@ -5,7 +5,12 @@ import { getTranslation } from '@/lib/i18n';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import '../globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+});
 
 const siteUrl = 'https://doc2md.org';
 
@@ -57,10 +62,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
       canonical: `/${locale}`,
       languages: {
         'en': '/en',
-        'zh': '/zh',
+        'zh-cn': '/zh-cn',
+        'zh-hk': '/zh-hk',
+        'zh-tw': '/zh-tw',
         'ja': '/ja',
         'fr': '/fr',
         'de': '/de',
+        'es': '/es',
+        'pt-br': '/pt-br',
+        'ko': '/ko',
+        'it': '/it',
       },
     },
     openGraph: {
@@ -117,11 +128,17 @@ interface RootLayoutProps {
 
 export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
   return [
-    { locale: 'en' as Locale },
-    { locale: 'zh' as Locale },
-    { locale: 'ja' as Locale },
-    { locale: 'fr' as Locale },
-    { locale: 'de' as Locale },
+    { locale: 'en' },
+    { locale: 'zh-cn' },
+    { locale: 'zh-hk' },
+    { locale: 'zh-tw' },
+    { locale: 'ja' },
+    { locale: 'fr' },
+    { locale: 'de' },
+    { locale: 'es' },
+    { locale: 'pt-br' },
+    { locale: 'ko' },
+    { locale: 'it' },
   ];
 }
 
