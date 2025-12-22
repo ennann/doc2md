@@ -118,10 +118,16 @@ interface RootLayoutProps {
 export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
   return [
     { locale: 'en' as Locale },
-    { locale: 'zh' as Locale },
-    { locale: 'ja' as Locale },
     { locale: 'fr' as Locale },
     { locale: 'de' as Locale },
+    { locale: 'ja' as Locale },
+    { locale: 'es' as Locale },
+    { locale: 'pt-br' as Locale },
+    { locale: 'it' as Locale },
+    { locale: 'ko' as Locale },
+    { locale: 'zh-cn' as Locale },
+    { locale: 'zh-hk' as Locale },
+    { locale: 'zh-tw' as Locale },
   ];
 }
 
