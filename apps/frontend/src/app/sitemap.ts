@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 // Required for static export
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://doc2md.org';
+const BASE_URL = 'https://www.doc2md.org';
 
 // Supported locales
 const locales = [

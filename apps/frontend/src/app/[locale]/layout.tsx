@@ -7,7 +7,7 @@ import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-const siteUrl = 'https://doc2md.org';
+const siteUrl = 'https://www.doc2md.org';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
