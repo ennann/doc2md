@@ -70,26 +70,26 @@ export default async function Home({ params }: PageProps) {
               <FileUploader t={t} />
             </section>
 
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="flex flex-col items-center text-center space-y-3 p-5 rounded-lg border bg-card">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-primary" />
+            <section className="grid grid-cols-3 gap-2 md:gap-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="flex flex-col items-center text-center space-y-1 md:space-y-3 p-2 md:p-5 rounded-lg border bg-card">
+                <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Zap className="h-4 w-4 md:h-6 md:w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-sm">{t.privacy.noStorage}</h3>
+                <h3 className="font-semibold text-[10px] md:text-sm leading-tight">{t.privacy.noStorage}</h3>
               </div>
 
-              <div className="flex flex-col items-center text-center space-y-3 p-5 rounded-lg border bg-card">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-primary" />
+              <div className="flex flex-col items-center text-center space-y-1 md:space-y-3 p-2 md:p-5 rounded-lg border bg-card">
+                <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="h-4 w-4 md:h-6 md:w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-sm">{t.privacy.noTracking}</h3>
+                <h3 className="font-semibold text-[10px] md:text-sm leading-tight">{t.privacy.noTracking}</h3>
               </div>
 
-              <div className="flex flex-col items-center text-center space-y-3 p-5 rounded-lg border bg-card">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Lock className="h-6 w-6 text-primary" />
+              <div className="flex flex-col items-center text-center space-y-1 md:space-y-3 p-2 md:p-5 rounded-lg border bg-card">
+                <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Lock className="h-4 w-4 md:h-6 md:w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-sm">{t.privacy.secure}</h3>
+                <h3 className="font-semibold text-[10px] md:text-sm leading-tight">{t.privacy.secure}</h3>
               </div>
             </section>
           </div>
