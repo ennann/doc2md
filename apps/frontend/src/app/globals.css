@@ -58,7 +58,9 @@
 
   .upload-area.dragging {
     border-color: hsl(var(--primary));
-    background-color: hsl(var(--accent));
+    border-width: 4px;
+    background-color: hsl(var(--muted) / 0.8);
+    animation: border-pulse 3s ease-in-out infinite;
   }
 
   .upload-area.processing {
@@ -190,5 +192,20 @@
   }
   100% {
     transform: translateX(400%);
+  }
+}
+
+@keyframes border-pulse {
+  0% {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% {
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 20px 0 hsl(var(--primary) / 0.2);
+  }
+  100% {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
   }
 }

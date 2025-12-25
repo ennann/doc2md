@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { uploadFile, getTaskStatus, downloadMarkdown } from '@/lib/api';
 import type { TaskResponse } from '@/types';
-import { Upload, CheckCircle2, AlertCircle, FileText, ShieldCheck } from 'lucide-react';
+import { Upload, CheckCircle2, AlertCircle, FileText, ShieldCheck, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -84,27 +84,68 @@ export default function FileUploader({ t }: FileUploaderProps) {
     }
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-
-    const droppedFile = e.dataTransfer.files?.[0];
-    if (droppedFile && validateFile(droppedFile)) {
-      setFile(droppedFile);
-      setStatus('idle');
-      setError(null);
+  const handleRemoveFile = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setFile(null);
+    setStatus('idle');
+    setError(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
     }
   };
+
+  const dragCounter = useRef(0);
+
+  useEffect(() => {
+    const handleGlobalDragEnter = (e: DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dragCounter.current += 1;
+      if (e.dataTransfer?.types && e.dataTransfer.types.length > 0) {
+        setIsDragging(true);
+      }
+    };
+
+    const handleGlobalDragLeave = (e: DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dragCounter.current -= 1;
+      if (dragCounter.current === 0) {
+        setIsDragging(false);
+      }
+    };
+
+    const handleGlobalDragOver = (e: DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    const handleGlobalDrop = (e: DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragging(false);
+      dragCounter.current = 0;
+
+      const droppedFile = e.dataTransfer?.files?.[0];
+      if (droppedFile && validateFile(droppedFile)) {
+        setFile(droppedFile);
+        setStatus('idle');
+        setError(null);
+      }
+    };
+
+    window.addEventListener('dragenter', handleGlobalDragEnter);
+    window.addEventListener('dragleave', handleGlobalDragLeave);
+    window.addEventListener('dragover', handleGlobalDragOver);
+    window.addEventListener('drop', handleGlobalDrop);
+
+    return () => {
+      window.removeEventListener('dragenter', handleGlobalDragEnter);
+      window.removeEventListener('dragleave', handleGlobalDragLeave);
+      window.removeEventListener('dragover', handleGlobalDragOver);
+      window.removeEventListener('drop', handleGlobalDrop);
+    };
+  }, []);
 
   const handleUpload = async () => {
     if (!file) return;
@@ -132,13 +173,10 @@ export default function FileUploader({ t }: FileUploaderProps) {
     <div className="space-y-6">
       <div
         className={cn(
-          'upload-area relative',
+          'upload-area relative transition-all duration-200',
           isDragging && 'dragging',
           (status === 'processing' || status === 'uploading') && 'processing'
         )}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
         onClick={handleClickUpload}
       >
         <div className="upload-icon">
@@ -157,7 +195,10 @@ export default function FileUploader({ t }: FileUploaderProps) {
           className="hidden"
         />
 
-        <div className="flex flex-col items-center gap-2">
+        <div className={cn(
+          "flex flex-col items-center gap-2 transition-opacity duration-200",
+          (isDragging || file) ? "opacity-0 invisible" : "opacity-100 visible"
+        )}>
           <p className="supported-formats">{t.upload.supported}</p>
           <div className="flex items-center gap-1.5 text-green-600 dark:text-green-500 bg-green-50 dark:bg-green-900/10 px-3 py-1 rounded-full text-xs font-medium">
             <ShieldCheck className="h-3.5 w-3.5" />
@@ -167,7 +208,15 @@ export default function FileUploader({ t }: FileUploaderProps) {
       </div>
 
       {file && status === 'idle' && (
-        <div className="file-selected">
+        <div className="file-selected relative group">
+          <button
+            onClick={handleRemoveFile}
+            className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-700 opacity-0 group-hover:opacity-100 transition-all duration-200 focus:opacity-100 focus:outline-none"
+            title={t.upload?.removeFile || 'Remove file'}
+            aria-label="Remove file"
+          >
+            <X className="h-4 w-4" />
+          </button>
           <div className="flex items-center gap-3 mb-4">
             <FileText className="h-10 w-10 text-primary" />
             <div className="file-info flex-1">
